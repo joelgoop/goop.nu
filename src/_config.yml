@@ -1,0 +1,11 @@
+# Site settings
+title: goop.nu
+email: joel[at]goop.nu
+description: > # this means to ignore newlines until "baseurl:"
+  My personal web page where I show different projects and useful stuff. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://goop.nu"
+github_username:  joelgoop
+
+# Build settings
+markdown: kramdown
