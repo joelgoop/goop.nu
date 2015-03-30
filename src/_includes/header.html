@@ -1,9 +1,6 @@
 <header class="site-header">
 
   <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
     <nav class="site-nav navbar">
 <!--       <a href="#" class="menu-icon">
         <svg viewBox="0 0 18 15">
@@ -15,13 +12,12 @@
 
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-logo"><a href="/">{{ site.title }}</a></li>
-          {% for page in site.pages %}
-          {% if page.title %}
-          <li class="navbar-item"><a class="navbar-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-          {% endif %}
-          {% endfor %}
-        </ul>
+          <li class="navbar-logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></li>
+          {% for p in site.pages reversed %}{% if p.title %}
+          <!-- page.url {{ page.url }}, p.url {{p.url}} -->
+          <li class="navbar-item"><a class="navbar-link{% if p.url == page.url %} active{% endif %}" {% if p.color %}data-color="{{ p.color }}"{% endif %} href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
+          {% endif %}{% endfor %}
+          </ul>
       </div>
     </nav>
 

@@ -1,6 +1,15 @@
-$navbar-line-height: 6rem;
-$top-border-height: 10px;
-$navbar-elem-spacing: 35px;
+$navbar-line-height: 6rem !default;
+$navbar-border-height: 1rem !default;
+$navbar-elem-spacing: 2rem !default;
+
+$link-colors: (
+  'red': #DD1E2F,
+  'yellow': #EBB035,
+  'green': #218559,
+  'blue': #06A2CB,
+  'beige': #D0C6B1,
+  'black': #192823
+) !default;
 
 .navbar {
   display: none; }
@@ -13,27 +22,31 @@ $navbar-elem-spacing: 35px;
   .navbar,
   .navbar-spacer {
   	position: fixed;
+    font-family: "Open Sans",Helvetica, Arial, sans-serif;
   	top: 0;
   	left: 0;
     display: block;
     width: 100%;
-    height: $navbar-line-height;
     background: #fff;
     z-index: 99;
-    border-top: $top-border-height solid #eee;
-    border-bottom: 1px solid #eee; 
+    border-top: $navbar-border-height solid #ddd;
+    border-bottom: 1px solid #777; 
+    box-shadow: 0 1px 2px 0 #777;
   }
   .navbar-spacer {
-    display: none; }
+    display: none; 
+  }
   .navbar > .container {
-    width: 100%; }
+    width: 100%; 
+  }
   .navbar-list {
     list-style: none;
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+  }
   .navbar-element {
     position: relative;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: .2rem;
     line-height: $navbar-line-height;
     color: #222; 
@@ -41,26 +54,43 @@ $navbar-elem-spacing: 35px;
   .navbar-item {
     @extend .navbar-element;
     float: right;
+  }
+  .navbar-item a {
+    display: block;
+    height: 100%;
     margin-left: $navbar-elem-spacing;
+    padding-left: $navbar-elem-spacing;
+    padding-right: $navbar-elem-spacing;
+    border-bottom: $navbar-border-height solid transparent;
+  }
+  .navbar-item a:hover,
+  .navbar-item a.active {
+    color: gray;
+    border-bottom: $navbar-border-height solid gray;
+  }
+  @each $cname,$color in $link-colors {
+    .navbar-item a[data-color=#{$cname}]:hover,
+    .navbar-item a[data-color=#{$cname}].active {
+      color: darken($color, 10%);
+      border-bottom: $navbar-border-height solid darken($color, 10%);   
+    }
   }
   .navbar-logo {
     @extend .navbar-element;
     float: left;
     margin-right: $navbar-elem-spacing;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 46px;
+    font-weight: 500;
+    font-family: "Satisfy", cursive;
   }
-  .navbar-logo > a {
+  .navbar-logo a {
     color: #222;
     text-decoration: none;
   }
   .navbar-link {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
     color: #222;
   }
-  .navbar-link.active {
-    color: #33C3F0; }
 }

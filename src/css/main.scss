@@ -2,16 +2,43 @@
 ---
 @charset "utf-8";
 
-html {
-  font-size: 62.5%; }
-body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+$base-font-color: #222;
+
 
 @import
-        "menu",
-        "syntax-highlighting"
+    "skeleton",
+    "menu",
+    "syntax-highlighting"
 ;
+
+
+body {
+  font-family: "Merriweather","Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-content {
+    @extend .container;
+    padding-top: $navbar-line-height+2*$navbar-border-height+3rem;
+}
+
+ul.posts-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+ul.posts-list h4 {
+    margin-bottom: 0;
+}
+
+ul.posts-list p.meta {
+    margin-bottom: 1rem;
+    font-size: small;
+    color: lighten($base-font-color,20%)
+}
+
+
+
+
