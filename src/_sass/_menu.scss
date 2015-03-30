@@ -38,10 +38,6 @@ $navbar-elem-spacing: 35px;
     line-height: $navbar-line-height;
     color: #222; 
   }
-  .navbar-element > a{
-    color: #222; 
-    text-decoration: none;
-  }
   .navbar-item {
     @extend .navbar-element;
     float: right;
@@ -51,10 +47,16 @@ $navbar-elem-spacing: 35px;
     @extend .navbar-element;
     float: left;
     margin-right: $navbar-elem-spacing;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .navbar-logo > a {
+    color: #222;
+    text-decoration: none;
   }
   .navbar-link {
     font-size: 11px;
+    font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
     color: #222;
