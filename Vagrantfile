@@ -11,5 +11,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "src/", "/home/vagrant/src/"
 
-  config.vm.provision "ansible", playbook: "playbook.yml"
+  require 'rbconfig'
+  is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+  if is_windows
+    # Provisioning configuration for shell script.
+    config.vm.provision "shell" do |sh|
+      sh.path = "windows.sh"
+      sh.args = "playbook.yml"
+      sh.privileged = false
+    end
+  else
+    config.vm.provision "ansible", playbook: "playbook.yml"
+  end
+
 end
