@@ -6,14 +6,11 @@ color: red
 ---
 
 <div class="main-content">
-
-  <h1>Posts</h1>
-
   <ul class="posts-list">
     {% for post in site.posts %}
       <li>
-        <h4>{{ post.title }}</h4>
         <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+        <h2>{{ post.title }}</h2>
         {{ post.excerpt }}
         <p><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
       </li>
