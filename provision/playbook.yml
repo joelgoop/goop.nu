@@ -1,3 +1,5 @@
 - hosts: all
+  vars:
+    - deploy_key: ~/.ssh/deploy_key
   roles:
     - setup

@@ -1,14 +1,25 @@
-- name: Copy config files
+- name: Copy files
   copy: src={{item.file}} dest={{item.path}}
   with_items:
     - {file: 'goopsite.sh', path: '~/goopsite.sh'}
-    - {file: '.bashrc', path: '~/.bashrc'}
+    - {file: '/vagrant/deploy/id_rsa', path: "{{deploy_key}}"}
 
 - name: Set script permissions
-  file: path=~/goopsite.sh mode=755
+  file: path={{ item.path }} mode={{ item.mode }}
+  with_items:
+    - {path: '~/goopsite.sh', mode: 755}
+    - {path: "{{deploy_key}}", mode: 700}
 
 - name: Environment variables
-  lineinfile: dest=~/.bashrc state=present line='export SITE_SRC=~/src'
+  lineinfile: dest=~/.bashrc state=present line="export {{item.name}}={{item.value}}"
+  with_items:
+    - {name: "SITE_SRC", value: "~/src"}
+    - {name: "DEPLOY_KEY", value: "{{ deploy_key }}"}
+
+- name: Aliases
+  lineinfile: dest=~/.bashrc state=present line="alias {{item.name}}={{item.value}}"
+  with_items:
+    - {name: "goopsite", value: "~/goopsite.sh"}
 
 - name: Update apt
   sudo: true

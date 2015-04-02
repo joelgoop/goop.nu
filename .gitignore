@@ -2,3 +2,5 @@ src/_site
 src/.sass-cache
 *.sublime-*
 .vagrant/
+
+deploy/
