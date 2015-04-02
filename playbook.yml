@@ -1,6 +1,11 @@
 - hosts: all
   tasks:
 
+    - name: Copy config files
+      copy: src={{item.file}} dest={{item.path}}
+      with_items:
+        - {file: '.bashrc', path: '~/.bashrc'}
+
     - name: Update apt
       sudo: true
       apt: update_cache=yes
