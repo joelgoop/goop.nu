@@ -5,4 +5,4 @@ permalink: /projects/
 color: green
 ---
 
-These are some projects.
+No projects added yet.
