@@ -16,12 +16,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if is_windows
     # Provisioning configuration for shell script.
     config.vm.provision "shell" do |sh|
-      sh.path = "windows.sh"
-      sh.args = "playbook.yml"
+      sh.path = "provision/windows.sh"
+      sh.args = "provision/playbook.yml"
       sh.privileged = false
     end
   else
-    config.vm.provision "ansible", playbook: "playbook.yml"
+    config.vm.provision "ansible", playbook: "provision/playbook.yml"
   end
 
 end

@@ -1,0 +1,23 @@
+- name: Copy config files
+  copy: src={{item.file}} dest={{item.path}}
+  with_items:
+    - {file: 'goopsite.sh', path: '~/goopsite.sh'}
+    - {file: '.bashrc', path: '~/.bashrc'}
+
+- name: Set script permissions
+  file: path=~/goopsite.sh mode=755
+
+- name: Update apt
+  sudo: true
+  apt: update_cache=yes
+
+- name: Install packages
+  sudo: true
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - ruby-dev
+    - nodejs
+
+- name: Install Jekyll
+  sudo: true
+  gem: name=jekyll state=present user_install=no
