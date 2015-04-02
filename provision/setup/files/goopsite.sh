@@ -6,6 +6,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 function goopsite_serve {
+    cd $SITE_SRC
     jekyll serve --watch --force_polling -H 0.0.0.0
 }
 

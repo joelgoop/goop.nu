@@ -7,6 +7,9 @@
 - name: Set script permissions
   file: path=~/goopsite.sh mode=755
 
+- name: Environment variables
+  lineinfile: dest=~/.bashrc state=present line='export SITE_SRC=~/src'
+
 - name: Update apt
   sudo: true
   apt: update_cache=yes
