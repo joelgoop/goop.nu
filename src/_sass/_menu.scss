@@ -29,9 +29,9 @@ $link-colors: (
     width: 100%;
     background: #fff;
     z-index: 99;
-    border-top: $navbar-border-height solid #ddd;
-    border-bottom: 1px solid #777; 
-    box-shadow: 0 1px 2px 0 #777;
+    border-top: $navbar-border-height solid $grey;
+    border-bottom: 1px solid $grey-dark; 
+    box-shadow: 0 1px 2px 0 $grey-dark;
   }
   .navbar-spacer {
     display: none; 
@@ -49,7 +49,7 @@ $link-colors: (
     font-weight: 700;
     letter-spacing: .2rem;
     line-height: $navbar-line-height;
-    color: #222; 
+    color: $base-font-color; 
   }
   .navbar-item {
     @extend .navbar-element;
@@ -81,16 +81,16 @@ $link-colors: (
     margin-right: $navbar-elem-spacing;
     font-size: 46px;
     font-weight: 500;
-    font-family: "Satisfy", cursive;
+    font-family: "Satisfy",   "Brush Script MT", cursive;
   }
   .navbar-logo a {
-    color: #222;
+    color: $base-font-color;
     text-decoration: none;
   }
   .navbar-link {
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #222;
+    color: $base-font-color;
   }
 }
