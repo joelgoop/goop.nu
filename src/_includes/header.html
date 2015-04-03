@@ -13,7 +13,8 @@
       <div class="container">
         <ul class="navbar-list">
           <li class="navbar-logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></li>
-          {% for p in site.pages reversed %}{% if p.title %}
+          {% assign pages = site.pages | sort:"menu_order"  %}
+          {% for p in pages reversed %}{% if p.title %}
           <!-- page.url {{ page.url }}, p.url {{p.url}} -->
           <li class="navbar-item"><a class="navbar-link{% if p.url == page.url %} active{% endif %}" {% if p.color %}data-color="{{ p.color }}"{% endif %} href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
           {% endif %}{% endfor %}
