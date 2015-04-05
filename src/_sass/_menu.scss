@@ -31,7 +31,7 @@ $link-colors: (
     z-index: 99;
     border-top: $navbar-border-height solid $grey;
     border-bottom: 1px solid $grey-dark; 
-    box-shadow: 0 1px 2px 0 $grey-dark;
+    box-shadow: 0 2px 4px 0 $grey-dark;
   }
   .navbar-spacer {
     display: none; 
