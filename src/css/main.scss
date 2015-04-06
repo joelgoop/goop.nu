@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .main-content {
     @extend .container;
-    padding-top: $navbar-line-height+2*$navbar-border-height+3rem;
+    padding-top: $navbar-line-height+2*$navbar-border-height+6rem;
 }
 
 ul.posts-list {
