@@ -6,11 +6,9 @@ color: green
 menu_order: 2
 ---
 
-<ul class="projects-list">
-  {% for project in site.projects %}
-    <li>
-      <h2><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h2>
-      {{ project.content }}
-    </li>
-  {% endfor %}
-</ul>
+<div>
+  {% for project in site.projects %}<div class="one-third column">
+      <h3><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
+      {% if project.excerpt %}{{ project.excerpt }}{% else %}{{ project.content | truncate: 150 }}{% endif %}
+    </div>{% endfor %}
+</div>

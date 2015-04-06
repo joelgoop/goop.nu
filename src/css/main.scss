@@ -40,10 +40,18 @@ ul.posts-list p.meta {
     color: lighten($base-font-color,20%)
 }
 
+article > div {
+    @extend .row;
+}
+
+.project-info {
+    margin-top: 6rem;
+}
+
 footer {
     font-size: 0.4*$base-font-size;
     border-top: 1px solid $grey;
-    margin-top: 10rem;
+    margin-top: 6rem;
 }
 
 footer .container {

@@ -2,11 +2,14 @@
 title: josync
 layout: project
 github_url: jeinarsson/josync
-web_url: http://josync.readthedocs.org
+web:
+  url: http://josync.readthedocs.org
+  note: (documentation)
 collaborators:
   - github_user: jeinarsson
 
 under: projects
+excerpt: A simple backup program for Windows that syncs local directories with target folders on external hard drives or mapped network drives. 
 ---
 
 A simple backup program for Windows. It's written in Python and uses `rsync` through Cygwin to keep local directories synced with target folders on external hard drives or mapped network drives. 
