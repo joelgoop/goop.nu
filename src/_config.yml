@@ -7,7 +7,13 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://goop.nu"
 github_username:  joelgoop
-excerpt_separator: <!--end excerpt-->
+
+# Content
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 # Build settings
 markdown: kramdown
+excerpt_separator: <!--end excerpt-->

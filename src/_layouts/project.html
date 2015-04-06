@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="main-content">
+
+  <header>
+    <span class="category">Project</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.github_url or page.web_url %}<ul>
+      {% if page.github_url %}<li><a href="https://github.com/{{ page.github_url }}">https://github.com/{{ page.github_url }}</a></li>{% endif %}
+      {% if page.web_url %}<li><a href="{{ page.web_url }}">{{ page.web_url }}</a></li>{% endif %}
+    </ul>{% endif %}
+    {% if page.collaborators %}<ul>{% for c in page.collaborators %}
+        <li><a href="http://github.com/{{ c.github_user }}">{% if c.name %}{{ c.name }}{% else %}{{ c.github_user }}{% endif %}</a></li>
+    {% endfor %}</ul>{% endif %}
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+</div>

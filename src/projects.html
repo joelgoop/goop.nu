@@ -1,0 +1,16 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+color: green
+menu_order: 2
+---
+
+<ul class="projects-list">
+  {% for project in site.projects %}
+    <li>
+      <h2><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h2>
+      {{ project.content }}
+    </li>
+  {% endfor %}
+</ul>
