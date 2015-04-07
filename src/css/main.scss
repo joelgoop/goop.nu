@@ -8,8 +8,12 @@ $grey-dark: darken($grey, 30%);
 $base-font-color: #222;
 $base-font-size: 2em;
 
+$navbar-line-height: 7rem;
+$navbar-border-height: 1rem;
+$mobile-menu-height: {{ site.pages | size | minus: 2 }} * $navbar-line-height + {{ site.pages | size | minus: 2 }}*$navbar-border-height;
 
 @import
+    "variables",
     "skeleton",
     "menu",
     "footer",
@@ -24,15 +28,17 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .page-content {
+    -webkit-transition: top 0.2s;
+    -moz-transition: top 0.2s;
     transition: top 0.2s;
     width: 100%;
     position: relative;
     background-color: white;
     top: $navbar-line-height+$navbar-border-height+0.5rem; 
+    z-index: -1
 }
 .nav-trigger:checked ~ .page-content{
-    top: {{ site.pages | size | minus: 2 }} * $navbar-line-height + {{ site.pages | size | minus: 2 }}*$navbar-border-height ;
-    z-index: -1;
+    top: $mobile-menu-height;
 } 
 .main-content {
     @extend .container;
