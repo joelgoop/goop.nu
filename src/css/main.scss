@@ -6,7 +6,7 @@ $grey: #ddd;
 $grey-dark: darken($grey, 30%);
 
 $base-font-color: #222;
-$base-font-size: 2em;
+$base-font-size: 1.5em;
 
 
 @import
@@ -36,7 +36,7 @@ ul.posts-list {
 
 ul.posts-list p.meta {
     margin-bottom: 0;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: lighten($base-font-color,20%)
 }
 
@@ -49,7 +49,7 @@ article > div {
 }
 
 footer {
-    font-size: 0.4*$base-font-size;
+    font-size: 1.3rem;
     border-top: 1px solid $grey;
     margin-top: 6rem;
 }

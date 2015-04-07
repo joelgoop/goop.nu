@@ -1,6 +1,6 @@
-$navbar-line-height: 6rem !default;
+$navbar-line-height: 5rem !default;
 $navbar-border-height: 1rem !default;
-$navbar-elem-spacing: 2rem !default;
+$navbar-elem-spacing: 1rem !default;
 
 $link-colors: (
   'red': #DD1E2F,
@@ -36,12 +36,9 @@ $link-colors: (
   .navbar-spacer {
     display: none; 
   }
-  .navbar > .container {
-    width: 100%; 
-  }
   .navbar-list {
     list-style: none;
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
   .navbar-element {
     position: relative;
@@ -79,9 +76,10 @@ $link-colors: (
     @extend .navbar-element;
     float: left;
     margin-right: $navbar-elem-spacing;
-    font-size: 46px;
+    font-size: 4.4rem;
     font-weight: 500;
     font-family: "Satisfy",   "Brush Script MT", cursive;
+    margin-top: -0.5rem;
   }
   .navbar-logo a {
     color: $base-font-color;
