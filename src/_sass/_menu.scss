@@ -16,6 +16,7 @@
   box-shadow: 0 2px 4px 0 $grey-dark;
 }
 .navbar > .container {
+  padding: 0;
   width: 100%; 
 }
 .navbar-element {
@@ -69,23 +70,23 @@
   text-decoration: none;
   color: $base-font-color;
 }
-nav.navbar {
-  -webkit-transition: max-height 0.2s;
-  -moz-transition: max-height 0.2s;
-  transition: max-height 0.2s;
-  overflow: hidden;
-  max-height: $navbar-line-height;
-  // max-height: 3rem;
-}
-.nav-trigger:checked ~ nav.navbar {
-  max-height: $mobile-menu-height;
-}
 
 
 @media (max-width: 750px){
+  nav.navbar {
+    -webkit-transition: max-height 0.2s;
+    -moz-transition: max-height 0.2s;
+    transition: max-height 0.2s;
+    overflow: hidden;
+    max-height: $navbar-line-height;
+    // max-height: 3rem;
+  }
+  .nav-trigger:checked ~ nav.navbar {
+    max-height: $mobile-menu-height;
+  }
   .navbar {
     right: 0;
-    z-index: 0;
+    z-index: 100;
   }
   // .navbar-list{
   //   max-height: 5*$navbar-line-height+4*$navbar-border-height;
