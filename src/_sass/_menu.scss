@@ -11,86 +11,118 @@ $link-colors: (
   'black': #192823
 ) !default;
 
-.navbar {
-  display: none; }
+/* Navbar */
+.navbar + .docs-section {
+  border-top-width: 0; }
+.navbar,
+.navbar-spacer {
+  position: fixed;
+  width: 100%; 
+  font-family: "Open Sans",Helvetica, Arial, sans-serif;
+  top: 0;
+  left: 0;
+  display: block;
+  background: #fff;
+  z-index: 99;
+  border-top: $navbar-border-height solid $grey;
+  border-bottom: 1px solid $grey-dark; 
+  box-shadow: 0 2px 4px 0 $grey-dark;
+}
+.navbar > .container {
+  width: 100%; 
+}
+.navbar-element {
+  position: relative;
+  margin-bottom: 0;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  line-height: $navbar-line-height;
+  color: $base-font-color; 
+}
+.navbar-item {
+  @extend .navbar-element;
+}
+.navbar-logo {
+  @extend .navbar-element;
+  float: left;
+  margin-right: $navbar-elem-spacing;
+  font-size: 46px;
+  font-weight: 500;
+  font-family: "Satisfy",   "Brush Script MT", cursive;
+}
+.navbar-item a {
+  text-align: center;
+  display: block;
+  height: 100%;
+  border-bottom: $navbar-border-height solid transparent;
+}
+.navbar-item a:hover,
+.navbar-item a.active {
+  color: gray;
+  border-bottom: $navbar-border-height solid gray;
+}
+@each $cname,$color in $link-colors {
+  .navbar-item a[data-color=#{$cname}]:hover,
+  .navbar-item a[data-color=#{$cname}].active {
+    color: darken($color, 10%);
+    border-bottom: $navbar-border-height solid darken($color, 10%);   
+  }
+}
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0; 
+}
+.navbar-logo a {
+  color: $base-font-color;
+  text-decoration: none;
+}
+.navbar-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $base-font-color;
+}
+header {
+  overflow: hidden;
+  transition: max-height 0.2s;
+  max-height: $navbar-line-height+$navbar-border-height;
+}
+.nav-trigger:checked ~ header {
+    max-height: {{ site.pages | size | minus: 2 }} * $navbar-line-height + {{ site.pages | size | minus: 2 }}*$navbar-border-height ;
+}
+
+
+@media (max-width: 750px){
+  .navbar {
+    right: 0;
+    z-index: 0;
+  }
+  // .navbar-list{
+  //   max-height: 5*$navbar-line-height+4*$navbar-border-height;
+  // }
+  .navbar-logo {
+    padding-left: $navbar-elem-spacing;
+    border-bottom: 1px solid $grey; 
+  }
+  .navbar-item a {
+    width: 100%;
+  }
+  .navbar-element {
+    width: 100%;
+  }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-  /* Navbar */
-  .navbar + .docs-section {
-    border-top-width: 0; }
-  .navbar,
-  .navbar-spacer {
-  	position: fixed;
-    font-family: "Open Sans",Helvetica, Arial, sans-serif;
-  	top: 0;
-  	left: 0;
-    display: block;
-    width: 100%;
-    background: #fff;
-    z-index: 99;
-    border-top: $navbar-border-height solid $grey;
-    border-bottom: 1px solid $grey-dark; 
-    box-shadow: 0 2px 4px 0 $grey-dark;
-  }
   .navbar-spacer {
     display: none; 
   }
-  .navbar > .container {
-    width: 100%; 
-  }
-  .navbar-list {
-    list-style: none;
-    margin-bottom: 0; 
-  }
-  .navbar-element {
-    position: relative;
-    margin-bottom: 0;
-    font-weight: 700;
-    letter-spacing: .2rem;
-    line-height: $navbar-line-height;
-    color: $base-font-color; 
-  }
   .navbar-item {
-    @extend .navbar-element;
     float: right;
   }
   .navbar-item a {
-    display: block;
-    height: 100%;
     margin-left: $navbar-elem-spacing;
     padding-left: $navbar-elem-spacing;
     padding-right: $navbar-elem-spacing;
-    border-bottom: $navbar-border-height solid transparent;
-  }
-  .navbar-item a:hover,
-  .navbar-item a.active {
-    color: gray;
-    border-bottom: $navbar-border-height solid gray;
-  }
-  @each $cname,$color in $link-colors {
-    .navbar-item a[data-color=#{$cname}]:hover,
-    .navbar-item a[data-color=#{$cname}].active {
-      color: darken($color, 10%);
-      border-bottom: $navbar-border-height solid darken($color, 10%);   
-    }
-  }
-  .navbar-logo {
-    @extend .navbar-element;
-    float: left;
-    margin-right: $navbar-elem-spacing;
-    font-size: 46px;
-    font-weight: 500;
-    font-family: "Satisfy",   "Brush Script MT", cursive;
-  }
-  .navbar-logo a {
-    color: $base-font-color;
-    text-decoration: none;
-  }
-  .navbar-link {
-    font-size: 14px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $base-font-color;
   }
 }

@@ -23,10 +23,20 @@ body {
 h1,h2,h3,h4,h5,h6 {
   font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+.page-content {
+    transition: top 0.2s;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    top: $navbar-line-height+$navbar-border-height+0.5rem; 
+}
+.nav-trigger:checked ~ .page-content{
+    top: {{ site.pages | size | minus: 2 }} * $navbar-line-height + {{ site.pages | size | minus: 2 }}*$navbar-border-height ;
+    z-index: -1;
+} 
 .main-content {
     @extend .container;
-    padding-top: $navbar-line-height+2*$navbar-border-height+6rem;
+    padding-top: 6rem;
 }
 
 ul.posts-list {
