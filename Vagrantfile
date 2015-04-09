@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 4000, host: 8080
 
   config.vm.synced_folder "src/", "/home/vagrant/src/"
+  config.vm.synced_folder "frontend/", "/home/vagrant/frontend/"
 
   require 'rbconfig'
   is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)

@@ -21,6 +21,10 @@
   with_items:
     - {name: "goopsite", value: "~/goopsite.sh"}
 
+- name: Install NodeSource repo
+  sudo: yes
+  shell: curl -sL https://deb.nodesource.com/setup | bash -
+
 - name: Update apt
   sudo: true
   apt: update_cache=yes

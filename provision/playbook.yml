@@ -3,3 +3,4 @@
     - deploy_key: ~/.ssh/deploy_key
   roles:
     - setup
+    - frontend
