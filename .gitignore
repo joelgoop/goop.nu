@@ -1,7 +1,5 @@
-src/_site
-src/.sass-cache
+_site
+.sass-cache
 *.sublime-*
-.vagrant/
 
-deploy/
 frontend/bower_components/
