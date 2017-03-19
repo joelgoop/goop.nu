@@ -1,6 +1,6 @@
-$navbar-line-height: 5rem !default;
-$navbar-border-height: 1rem !default;
-$navbar-elem-spacing: 1rem !default;
+$navbar-line-height: 4rem !default;
+$navbar-border-height: 0.4rem !default;
+$navbar-elem-spacing: 2rem !default;
 
 $link-colors: (
   'red': #DD1E2F,
@@ -22,7 +22,7 @@ $link-colors: (
   .navbar,
   .navbar-spacer {
   	position: fixed;
-    font-family: "Open Sans",Helvetica, Arial, sans-serif;
+    font-family: $header-font-family;
   	top: 0;
   	left: 0;
     display: block;
@@ -31,7 +31,7 @@ $link-colors: (
     z-index: 99;
     border-top: $navbar-border-height solid $grey;
     border-bottom: 1px solid $grey-dark; 
-    box-shadow: 0 2px 4px 0 $grey-dark;
+    @include box-shadow(0,1px,2px,$grey-dark);
   }
   .navbar-spacer {
     display: none; 
@@ -76,9 +76,9 @@ $link-colors: (
     @extend .navbar-element;
     float: left;
     margin-right: $navbar-elem-spacing;
-    font-size: 4.4rem;
-    font-weight: 500;
-    font-family: "Satisfy",   "Brush Script MT", cursive;
+    font-size: 2srem;
+    font-weight: 700;
+    font-family: $header-font-family;
     margin-top: -0.5rem;
   }
   .navbar-logo a {

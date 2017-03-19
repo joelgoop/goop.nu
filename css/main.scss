@@ -2,26 +2,47 @@
 ---
 @charset "utf-8";
 
+@import
+    "skeleton/config",
+    "menu",
+    "footer",
+    "syntax-highlighting"
+;
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,700,600&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,700italic,400italic&subset=latin,latin-ext);
+$header-font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-font-family:  "Merriweather",Garamond, Times,"Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 $grey: #ddd;
 $grey-dark: darken($grey, 30%);
 
 $base-font-color: #222;
 $base-font-size: 1.5em;
 
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
 
-@import
-    "skeleton",
-    "menu",
-    "footer",
-    "syntax-highlighting"
-;
+
+
+
+
 
 
 body {
-  font-family: "Merriweather",Garamond, Times,"Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $body-font-family;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Open Sans","Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $header-font-family;
 }
 
 .main-content {
@@ -40,9 +61,9 @@ ul.posts-list p.meta {
     color: lighten($base-font-color,20%)
 }
 
-article > div {
-    @extend .row;
-}
+// article > div {
+//     @extend .row;
+// }
 
 .project-info {
     margin-top: 6rem;

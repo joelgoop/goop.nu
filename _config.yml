@@ -17,3 +17,7 @@ collections:
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--end excerpt-->
+
+exclude:
+  - "bower_components"
+  - "bower.json"
