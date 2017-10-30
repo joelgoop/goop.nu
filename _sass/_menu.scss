@@ -22,7 +22,7 @@ $link-colors: (
   .navbar,
   .navbar-spacer {
   	position: fixed;
-    font-family: $header-font-family;
+    font-family: $heading-family;
   	top: 0;
   	left: 0;
     display: block;
@@ -78,7 +78,7 @@ $link-colors: (
     margin-right: $navbar-elem-spacing;
     font-size: 2srem;
     font-weight: 700;
-    font-family: $header-font-family;
+    font-family: $heading-family;
     margin-top: -0.5rem;
   }
   .navbar-logo a {
