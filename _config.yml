@@ -4,7 +4,7 @@ email: joel[at]goop.nu
 author: Joel Goop
 description: > # this means to ignore newlines until "baseurl:"
   My personal website where I post about projects and useful stuff. 
-baseurl: "goop.nu" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://goop.nu"
 github_username:  joelgoop
 
