@@ -19,5 +19,5 @@ markdown: kramdown
 excerpt_separator: <!--end excerpt-->
 
 exclude:
-  - "bower_components"
-  - "bower.json"
+  - "node_modules"
+  - "package.json"
