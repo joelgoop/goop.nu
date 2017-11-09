@@ -3,19 +3,9 @@
 // See skeleton/core/_config.scss for default variable values.
 // See _vars.scss for theme-scoped default values.
 
-/* RESET
- * ------------------------------------------------ */
-@include global-reset;
-
 /* BASIC STYLES
  * ------------------------------------------------ */
-html {
-	font-size: percentage(strip-units($base-font-size) / 16);
-	overflow-y: scroll;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	line-height: 1.2;
-}
+html { font-size: percentage(strip-units($base-font-size) / 16); }
 @if($use-global-border-box) {
 	*,
 	*:before,
@@ -29,13 +19,29 @@ body {
 	background: $background-color;
 	font: {
 		family: $font-family;
-		weight: normal;
+		weight: $font-weight;
 		style: normal;
 	}
-	@include font-size(14px);
-	line-height: relative(26px);
+	@include font-size($font-size);
+	line-height: 1.6;
 	color: $font-color;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
 	margin: 0 auto;
 }
+
+/* SPACING
+ * ------------------------------------------------ */
+button,
+.button { margin-bottom: relative(10px); }
+input,
+textarea,
+select,
+fieldset { margin-bottom: relative(15px); }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form { margin-bottom: relative(25px); }

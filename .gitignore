@@ -3,4 +3,4 @@ _site
 *.sublime-*
 
 node_modules/
-yarn.lock
+*.lock

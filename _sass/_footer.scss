@@ -1,0 +1,51 @@
+// Footer settings
+
+footer {
+    font-size: $footer-font-size;
+    padding: $footer-padding 0px;
+    border-top: 1px $footer-border-color solid;
+    background-color: $footer-bg-color;
+}
+
+footer > div {
+    @extend .container;
+}
+
+footer div span {
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+}
+
+footer i {
+    @extend .fa;
+    width: 1rem;
+}
+
+footer div.contact {
+    @extend .one-half, .columns;
+}
+
+footer div.contact i {
+    margin-right: 0.8rem;
+}
+
+footer div.contact i.mail {
+    @extend .fa-envelope-o;
+    font-size: $footer-font-size !important
+}
+footer div.contact i.github {
+    @extend .fa-github;
+    font-size: $footer-font-size*1.2 !important
+}
+
+footer div.copyright i {
+    @extend .fa-copyright;
+    margin-right: 0.4rem;
+}
+
+footer div.copyright {
+    @extend .one-half, .columns;
+    text-align: right;
+    // margin-top: 1rem;
+}
